@@ -1,0 +1,5 @@
+user - 123456789@1
+password - 123456789@1
+client id - 4abf3be1-99fb-4827-85ec-c768216e6ce8
+client name - espClient
+switch11 -1, 0

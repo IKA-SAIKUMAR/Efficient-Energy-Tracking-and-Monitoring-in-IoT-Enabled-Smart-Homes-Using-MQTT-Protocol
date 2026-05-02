@@ -1,0 +1,565 @@
+[
+    {
+        "id": "850c74d6bd397b97",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "16522dec431de50a",
+        "type": "mqtt-broker",
+        "name": "ESP01_Test",
+        "broker": "broker.hivemq.com",
+        "port": 1883,
+        "clientid": "69fcacc8-1ad8-4516-9fe1-dab512226bfb",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": "60",
+        "cleansession": false,
+        "autoUnsubscribe": false,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "true",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "bf20f7c88224f9ba",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#2db7be",
+                "baseFont": "Impact,Impact,Charcoal,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#2db7be",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#2db7be",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#5ed3d9",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#2db7be",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "Impact,Impact,Charcoal,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "1c2a68a725e87269",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "0e580438d22eddc9",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "1c2a68a725e87269",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "4ab7519ccfc4f9a1",
+        "type": "mqtt-broker",
+        "name": "espClient",
+        "broker": "broker.hivemq.com",
+        "port": 1883,
+        "clientid": "4abf3be1-99fb-4827-85ec-c768216e6ce8",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "1a0f51b1ddbcae8d",
+        "type": "mqtt in",
+        "z": "850c74d6bd397b97",
+        "name": "",
+        "topic": "switch11",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "4ab7519ccfc4f9a1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 460,
+        "y": 100,
+        "wires": [
+            [
+                "db68dd913c90d339"
+            ]
+        ]
+    },
+    {
+        "id": "ec469f7b1cc4172e",
+        "type": "ui_switch",
+        "z": "850c74d6bd397b97",
+        "name": "",
+        "label": "switch1",
+        "tooltip": "",
+        "group": "0e580438d22eddc9",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "switch11",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 480,
+        "y": 180,
+        "wires": [
+            [
+                "abd0889bb01326c2"
+            ]
+        ]
+    },
+    {
+        "id": "abd0889bb01326c2",
+        "type": "mqtt out",
+        "z": "850c74d6bd397b97",
+        "name": "",
+        "topic": "switch11",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "4ab7519ccfc4f9a1",
+        "x": 620,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "db68dd913c90d339",
+        "type": "ui_text",
+        "z": "850c74d6bd397b97",
+        "group": "0e580438d22eddc9",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "switch11",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "className": "",
+        "style": true,
+        "font": "",
+        "fontSize": 16,
+        "color": "#ffffff",
+        "x": 640,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "4046074a6348d175",
+        "type": "mqtt in",
+        "z": "850c74d6bd397b97",
+        "name": "",
+        "topic": "switch12",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "4ab7519ccfc4f9a1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 120,
+        "y": 240,
+        "wires": [
+            [
+                "da25d96e0743b0d9"
+            ]
+        ]
+    },
+    {
+        "id": "c744211ecee698e0",
+        "type": "ui_switch",
+        "z": "850c74d6bd397b97",
+        "name": "",
+        "label": "switch2",
+        "tooltip": "",
+        "group": "0e580438d22eddc9",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "switch11",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 140,
+        "y": 320,
+        "wires": [
+            [
+                "2f4e1e0ae07e2daf"
+            ]
+        ]
+    },
+    {
+        "id": "2f4e1e0ae07e2daf",
+        "type": "mqtt out",
+        "z": "850c74d6bd397b97",
+        "name": "",
+        "topic": "switch12",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "4ab7519ccfc4f9a1",
+        "x": 280,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "da25d96e0743b0d9",
+        "type": "ui_text",
+        "z": "850c74d6bd397b97",
+        "group": "0e580438d22eddc9",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "switch12",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "className": "",
+        "style": true,
+        "font": "",
+        "fontSize": 16,
+        "color": "#ffffff",
+        "x": 300,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "58ebb2ac208e98f1",
+        "type": "mqtt in",
+        "z": "850c74d6bd397b97",
+        "name": "",
+        "topic": "switch14",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "4ab7519ccfc4f9a1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 480,
+        "y": 400,
+        "wires": [
+            [
+                "25d4f66c3ffb8345"
+            ]
+        ]
+    },
+    {
+        "id": "38fed66994ca28ab",
+        "type": "ui_switch",
+        "z": "850c74d6bd397b97",
+        "name": "",
+        "label": "switch4",
+        "tooltip": "",
+        "group": "0e580438d22eddc9",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": "false",
+        "topic": "switch11",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 500,
+        "y": 480,
+        "wires": [
+            [
+                "4715351ceff933b0"
+            ]
+        ]
+    },
+    {
+        "id": "4715351ceff933b0",
+        "type": "mqtt out",
+        "z": "850c74d6bd397b97",
+        "name": "",
+        "topic": "switch14",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "4ab7519ccfc4f9a1",
+        "x": 640,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "25d4f66c3ffb8345",
+        "type": "ui_text",
+        "z": "850c74d6bd397b97",
+        "group": "0e580438d22eddc9",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "switch14",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "className": "",
+        "style": true,
+        "font": "",
+        "fontSize": 16,
+        "color": "#ffffff",
+        "x": 660,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "3bd907c472c6b803",
+        "type": "mqtt in",
+        "z": "850c74d6bd397b97",
+        "name": "",
+        "topic": "switch13",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "4ab7519ccfc4f9a1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 760,
+        "y": 240,
+        "wires": [
+            [
+                "5127b58fa857b77b"
+            ]
+        ]
+    },
+    {
+        "id": "d201d536f5eb6dd0",
+        "type": "ui_switch",
+        "z": "850c74d6bd397b97",
+        "name": "",
+        "label": "switch3",
+        "tooltip": "",
+        "group": "0e580438d22eddc9",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "switch11",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 780,
+        "y": 320,
+        "wires": [
+            [
+                "f0b2e83e4527b70c"
+            ]
+        ]
+    },
+    {
+        "id": "f0b2e83e4527b70c",
+        "type": "mqtt out",
+        "z": "850c74d6bd397b97",
+        "name": "",
+        "topic": "switch13",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "4ab7519ccfc4f9a1",
+        "x": 920,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "5127b58fa857b77b",
+        "type": "ui_text",
+        "z": "850c74d6bd397b97",
+        "group": "0e580438d22eddc9",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "switch13",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "className": "",
+        "style": true,
+        "font": "",
+        "fontSize": 16,
+        "color": "#ffffff",
+        "x": 940,
+        "y": 240,
+        "wires": []
+    }
+]
